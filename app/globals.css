@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --main-color: #233661;
+  --secondary-color: #ff6e31;
+  --slate-color: #1e293b;
+  --green-color: #4ade80;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-main: var(--main-color);
+  --color-secondary: var(--secondary-color);
+  --color-slate: var(--slate-color);
+  --color-green: var(--green-color);
+  --font-cairo: var(--font-cairo);
+  --shadow-custom: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-cairo), Helvetica, sans-serif;
+  direction: rtl;
+} */
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-cairo), Helvetica, sans-serif;
+  direction: rtl;
+  --white: #fff;
+  --white-feint: #898d8e;
+  --black: #0b1012;
+  --black-2: #111517;
+  --yellow: #fff312;
+  --blue: #83e6f7;
+  --green: #8df0cc;
+  --hue-0: var(--yellow);
+  --hue-1: #ff0088;
+  --hue-2: #dd00ee;
+  --hue-3: #9911ff;
+  --hue-4: #1e75f7;
+  --hue-5: #0cdcf7;
+  --hue-6: var(--green);
+
+  --hue-0-transparent: #fff31244;
+  --hue-1-transparent: #ff008844;
+  --hue-2-transparent: #dd00ee44;
+  --hue-3-transparent: #9911ff44;
+  --hue-4-transparent: #0d63f844;
+  --hue-5-transparent: #0cdcf744;
+  --hue-6-transparent: #8df0cc44;
+
+  --text: var(--white);
+  --accent: var(--blue);
+  --accent-transparent: #8ac0ff44;
+  --primary-control-color: var(--white);
+  --layer: #0b1011;
+  --border: #1d2628;
+  --secondary-control-color: #8ac0ff0d;
+  --background: var(--black);
+
+  --layer-transparent: #14171caa;
+  --divider: #1a1e26;
+  --feint-text: #586d8c;
+
+  --dot-size: 1px;
+  --gap-size: 20px;
+  --offset: calc(var(--gap-size) / 2);
+}
+
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.2;
+}
