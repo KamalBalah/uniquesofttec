@@ -19,10 +19,10 @@ const menuItems: IMenuItems[] = [
     title: "لماذا نحن",
     id: "#why-us",
   },
-  {
-    title: "عملاءنا",
-    id: "#our-projects",
-  },
+  // {
+  //   title: "عملاءنا",
+  //   id: "#our-projects",
+  // },
   {
     title: "تواصل معنا",
     id: "#connect",

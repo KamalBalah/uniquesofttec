@@ -43,10 +43,10 @@ export default function Home() {
           description={data.whyUs.description}
           whyUsList={data.whyUs.list}
         />
-        <OurProjects
+        {/* <OurProjects
           description={data.projects.description}
           projects={data.projects.list}
-        />
+        /> */}
         <Footer connectList={data.connects.list} />
       </main>
     </div>
