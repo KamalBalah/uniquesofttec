@@ -92,22 +92,22 @@
     "list": [
       {
         "icon": "facebook.svg",
-        "url": "https://react.dev/",
+        "url": "https://facebook.com/",
         "title": "Facebook"
       },
       {
         "icon": "telegram.svg",
-        "url": "https://react.dev/",
+        "url": "https://telegram.org/",
         "title": "Telegram"
       },
       {
         "icon": "whatsapp.svg",
-        "url": "https://react.dev/",
+        "url": "https://whatsapp.com/",
         "title": "Whatsapp"
       },
       {
         "icon": "instagram.svg",
-        "url": "https://react.dev/",
+        "url": "https://instagram.com/",
         "title": "Instagram"
       },
       {

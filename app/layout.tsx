@@ -1,10 +1,42 @@
 import type { Metadata } from "next";
-import { Cairo } from "next/font/google";
+// import { Cairo } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const cairo = Cairo({
+const cairo = localFont({
+  src: [
+    {
+      path: "./assets/fonts/cairo/Cairo-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./assets/fonts/cairo/Cairo-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./assets/fonts/cairo/Cairo-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./assets/fonts/cairo/Cairo-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./assets/fonts/cairo/Cairo-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./assets/fonts/cairo/Cairo-Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
   variable: "--font-cairo",
-  subsets: ["arabic"],
 });
 
 export const metadata: Metadata = {

@@ -3,7 +3,7 @@
 import WhayUs from "@/components/WhayUs";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import OurProjects from "@/components/OurProjects";
+// import OurProjects from "@/components/OurProjects";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { IData } from "@/interfaces";
