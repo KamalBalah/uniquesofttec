@@ -92,28 +92,18 @@
     "list": [
       {
         "icon": "facebook.svg",
-        "url": "https://facebook.com/",
+        "url": "https://www.facebook.com/UniqueSoftTec",
         "title": "Facebook"
       },
       {
-        "icon": "telegram.svg",
-        "url": "https://telegram.org/",
-        "title": "Telegram"
-      },
-      {
-        "icon": "whatsapp.svg",
-        "url": "https://whatsapp.com/",
-        "title": "Whatsapp"
+        "icon": "x.svg",
+        "url": "https://x.com/UniqueSoftTec",
+        "title": "X"
       },
       {
         "icon": "instagram.svg",
-        "url": "https://instagram.com/",
+        "url": "https://www.instagram.com/uniquesofttech",
         "title": "Instagram"
-      },
-      {
-        "icon": "mail.svg",
-        "url": "mailto:omairm1x@gmail.com",
-        "title": "Mail"
       }
     ]
   }
