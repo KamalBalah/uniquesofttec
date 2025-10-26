@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { IData } from "@/interfaces";
 import Spinner from "@/components/Spinner";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
 	const [data, setData] = useState<IData>();
@@ -47,6 +48,7 @@ export default function Home() {
           description={data.projects.description}
           projects={data.projects.list}
         /> */}
+				<ContactForm />
 				<Footer connectList={data.connects.list} />
 			</main>
 		</div>
