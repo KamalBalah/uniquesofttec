@@ -91,6 +91,11 @@
   "connects": {
     "list": [
       {
+        "icon": "whatsapp.svg",
+        "url": "https://api.whatsapp.com/send?phone=967782804030&text=مرحبا%20UniqueSoft",
+        "title": "WhatsApp"
+      },
+      {
         "icon": "facebook.svg",
         "url": "https://www.facebook.com/UniqueSoftTec",
         "title": "Facebook"

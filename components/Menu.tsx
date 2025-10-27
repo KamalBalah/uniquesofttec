@@ -25,7 +25,7 @@ const menuItems: IMenuItems[] = [
   // },
   {
     title: "تواصل معنا",
-    id: "#connect",
+    id: "#contact",
   },
 ];
 
