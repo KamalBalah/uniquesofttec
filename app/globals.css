@@ -3,24 +3,69 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --main-color: #233661;
+  /* --secondary-color: #ff6e31; */
+  --secondary-color: rgba(255, 110, 49, 0.83);
+  --slate-color: #1e293b;
+  --green-color: #4ade80;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-main: var(--main-color);
+  --color-secondary: var(--secondary-color);
+  --color-slate: var(--slate-color);
+  --color-green: var(--green-color);
+  --font-cairo: var(--font-cairo);
+  --font-suisseIntl: var(--font-suisseIntl);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-suisseIntl), var(--font-cairo), sans-serif;
+  direction: rtl;
+}
+
+.bg-waterfall {
+  width: 100px;
+  background-image: url("/images/pattern-navy.svg");
+  background-repeat: repeat-y;
+  background-size: 90px auto;
+  background-position: 0 1000%;
+  animation: waterfall 12s linear infinite;
+}
+.bg-waterfall-horz {
+  height: 100px;
+  background-image: url("/images/pattern-navy-horz.svg");
+  background-repeat: repeat-x;
+  background-size: auto 90px;
+  background-position: 1000% 0;
+  animation: waterfall-horz 30s linear infinite;
+}
+
+@keyframes waterfall {
+  from {
+    background-position: 0 1000%;
+  }
+  to {
+    background-position: 0 -1000%;
+  }
+}
+
+@keyframes waterfall-horz {
+  from {
+    background-position: 1000% 0;
+  }
+  to {
+    background-position: -1000% 0;
+  }
 }
