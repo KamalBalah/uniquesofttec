@@ -92,17 +92,22 @@
       },
       {
         "icon": "facebook.svg",
-        "url": "https://www.facebook.com/UniqueSoftTec",
+        "url": "https://www.facebook.com/uniquesoft.io",
         "title": "Facebook"
       },
       {
+        "icon": "linkedin.svg",
+        "url": "https://www.linkedin.com/company/uniquesoftio",
+        "title": "Linkedin"
+      },
+      {
         "icon": "x.svg",
-        "url": "https://x.com/UniqueSoftTec",
+        "url": "https://x.com/uniquesoft_io",
         "title": "X"
       },
       {
         "icon": "instagram.svg",
-        "url": "https://www.instagram.com/uniquesofttech",
+        "url": "https://www.instagram.com/uniquesoft_io",
         "title": "Instagram"
       }
     ]

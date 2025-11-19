@@ -1,5 +1,4 @@
 import { IConnectsList } from "@/interfaces";
-import Logo from "./Logo";
 import Image from "next/image";
 import Link from "next/link";
 
