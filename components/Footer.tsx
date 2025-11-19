@@ -23,8 +23,7 @@ const Footer = ({ connectList }: IProps) => {
             />
           </Link>
           <p className="text-white mt-5 text-center">
-            يونيك سوفت هي شركة تقنية متخصصة في تطوير البرمجيات وحلول الأعمال
-            الذكية
+            شركة تقنية متخصصة في تطوير البرمجيات وحلول الأعمال الذكية
           </p>
         </div>
         <div className="flex gap-4 justify-center">

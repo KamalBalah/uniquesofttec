@@ -4,12 +4,13 @@ const Hero = () => {
   return (
     <div id="home" className="py-10">
       <div className="bg-secondary rounded-xl min-h-[400px] flex flex-col md:flex-row justify-around items-center gap-10 px-10 relative overflow-hidden">
-        <div className="flex-1 text-center md:text-right pt-4">
+        <div className="flex-1 text-center md:text-right pt-6">
           <h1 className="text-7xl font-suisseIntl font-black text-white">
-            كن فريدا
+            كن فريداً
           </h1>
           <p className="text-lg font-bold font-suisseIntl mt-3 text-main">
-            في يونيك سوفت، نبتكر حلولًا برمجية مخصصة تساعدك على تطوير أعمالك.
+            في يونيك سوفت نصنع لك شيئًا فريدًا، نولي كل تفصيلة عناية ودقة،
+            لنقدّم لك منتجًا متفردًا يبرز بين الجميع.{" "}
           </p>
         </div>
         <div className="flex-1 z-1">
