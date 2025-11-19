@@ -21,12 +21,20 @@
   --font-suisseIntl: var(--font-suisseIntl);
 }
 
-/* @media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --main-color: #1a2438;
+    --secondary-color: rgba(255, 145, 90, 0.83);
+    --slate-color: #0f172a;
+    --green-color: #22c55e;
   }
 } */
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--background);

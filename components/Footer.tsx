@@ -1,6 +1,7 @@
 import { IConnectsList } from "@/interfaces";
 import Logo from "./Logo";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IProps {
   connectList: IConnectsList[];
@@ -10,12 +11,19 @@ const Footer = ({ connectList }: IProps) => {
   return (
     <footer
       id="connect"
-      className=" my-10 p-5 rounded-lg text-main flex items-center justify-center"
+      className="bg-secondary mt-15 mb-7 p-5 py-10 rounded-lg text-main flex items-center justify-center"
     >
       <div className="h-full flex flex-col justify-center overflow-y-auto">
         <div className="flex flex-col items-center gap-3">
-          <Logo />
-          <p className=" mt-5 text-center">
+          <Link href="/">
+            <Image
+              src="/images/Unique-Soft-for-orange-back.svg"
+              width={100}
+              height={100}
+              alt="Unique Soft Logo"
+            />
+          </Link>
+          <p className="text-white mt-5 text-center">
             يونيك سوفت هي شركة تقنية متخصصة في تطوير البرمجيات وحلول الأعمال
             الذكية
           </p>

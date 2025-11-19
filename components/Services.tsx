@@ -17,7 +17,7 @@ const Services = ({ description, services }: IProps) => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white text-center transition-all duration-300 rounded-md p-6 border border-gray-100  hover:border-gray-200 shadow-sm hover:shadow-lg"
+              className="bg-white/70 text-center transition-all duration-300 rounded-md p-6 border border-gray-100  hover:border-gray-200 shadow-sm hover:shadow-lg"
             >
               <div className="text-5xl mb-4 flex justify-center p-3 bg-green/20 w-14 aspect-square m-auto rounded-md">
                 <Image

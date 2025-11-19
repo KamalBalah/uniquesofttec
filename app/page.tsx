@@ -19,12 +19,33 @@ export default async function Home() {
       <main className="relative pt-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-2">
           <Hero />
-          <Services
-            description={data.services.description}
-            services={data.services.list}
-          />
-          <ContactForm />
-          <Footer connectList={data.connects.list} />
+
+          <div className="relative">
+            <Services
+              description={data.services.description}
+              services={data.services.list}
+            />
+            <div
+              aria-hidden="true"
+              className="absolute top-1/8 right-1/8 h-64 w-64 rounded-full bg-green/10 blur-3xl -z-1"
+            ></div>
+            <div
+              aria-hidden="true"
+              className="absolute left-1/8 bottom-1/8 h-64 w-64 rounded-full bg-secondary/10 blur-3xl -z-1"
+            ></div>
+          </div>
+          <div className="relative">
+            <ContactForm />
+            <Footer connectList={data.connects.list} />
+            <div
+              aria-hidden="true"
+              className="absolute top-1 right-1/8 h-64 w-64 rounded-full bg-main/10 blur-3xl -z-1"
+            ></div>
+            <div
+              aria-hidden="true"
+              className="absolute left-1/8 bottom-1/8 h-64 w-64 rounded-full bg-secondary/10 blur-3xl -z-1"
+            ></div>
+          </div>
         </div>
         <div
           aria-hidden="true"
