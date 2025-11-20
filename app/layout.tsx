@@ -87,7 +87,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Unique Soft | يونيك سوفت",
               url: "https://uniquesoft.tech",
-              logo: "https://www.uniquesoft.tech/unique_soft.svg",
+              logo: "https://uniquesoft.tech/unique_soft.svg",
               sameAs: [
                 "https://www.facebook.com/uniquesoft.io",
                 "https://www.linkedin.com/company/uniquesoftio",
