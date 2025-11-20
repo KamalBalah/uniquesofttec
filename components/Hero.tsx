@@ -19,7 +19,7 @@ const Hero = () => {
             width={450}
             height={450}
             className="w-80 md:w-auto"
-            alt="Hero Image"
+            alt="نقدّم لك منتجًا متفردًا يبرز بين الجميع."
           />
         </div>
 
