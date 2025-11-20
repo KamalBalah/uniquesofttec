@@ -79,6 +79,33 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <body className={`${cairo.variable} ${suisseIntl.variable} antialiased`}>
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Unique Soft | يونيك سوفت",
+              url: "https://uniquesoft.tech",
+              logo: "https://uniquesoft.tech/images/Unique-Soft-for-orange-back.svg",
+              sameAs: [
+                "https://www.facebook.com/uniquesoft.io",
+                "https://www.linkedin.com/company/uniquesoftio",
+                "https://x.com/uniquesoft_io",
+                "https://www.instagram.com/uniquesoft_io",
+              ],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: "+967782804030",
+                  contactType: "customer service",
+                  email: "uniquesoft.io@gmail.com",
+                  areaServed: "YE",
+                },
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );

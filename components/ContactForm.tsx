@@ -147,7 +147,7 @@ export default function ContactForm() {
                   className="w-6 h-6"
                 />
                 <span style={{ direction: "ltr" }}>
-                  uniquesoft.ye@gmail.com
+                  uniquesoft.io@gmail.com
                 </span>
               </a>
             </div>
