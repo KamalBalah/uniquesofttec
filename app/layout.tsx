@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { fullMetadata } from "@/config/metadata";
 
 const suisseIntl = localFont({
   src: [
@@ -66,9 +67,7 @@ const cairo = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Unique Soft|يونيك سوفت",
-  description:
-    "يونيك سوفت هي شركة متخصصة في تطوير البرمجيات وتقديم حلول رقمية مبتكرة تشمل تطبيقات الموبايل، مواقع الويب، تجربة المستخدم، والاستشارات التقنية",
+  ...fullMetadata,
 };
 
 export default function RootLayout({
@@ -77,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar">
+    <html lang="ar" dir="rtl">
       <body className={`${cairo.variable} ${suisseIntl.variable} antialiased`}>
         {children}
       </body>
