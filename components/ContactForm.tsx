@@ -85,7 +85,7 @@ export default function ContactForm() {
             name="phone"
             id="phone"
             placeholder="رقم الهاتف"
-            label="البريد الإلكتروني"
+            label="رقم الهاتف"
             value={formData.phone}
             onChange={handleChange}
             required
@@ -134,7 +134,7 @@ export default function ContactForm() {
             </div>
             <div className="flex mt-2">
               <a
-                href="mailto:uniquesoft.ye@gmail.com"
+                href="mailto:uniquesoft.io@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-secondary text-white px-4 py-2 rounded-md flex items-center space-x-2"
