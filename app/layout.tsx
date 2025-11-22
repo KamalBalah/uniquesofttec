@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { fullMetadata } from "@/config/metadata";
+import { Analytics } from "@vercel/analytics/next";
 
 const suisseIntl = localFont({
   src: [
@@ -79,6 +80,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <body className={`${cairo.variable} ${suisseIntl.variable} antialiased`}>
         {children}
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
