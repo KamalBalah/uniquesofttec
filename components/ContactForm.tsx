@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, ChangeEvent, FormEvent } from "react";
 import Input from "./ui/Input";
 import MiniSpinner from "./ui/MiniSpinner";
+import { useTranslations } from "next-intl";
 
 interface FormData {
   name: string;
@@ -13,6 +14,7 @@ interface FormData {
 }
 
 export default function ContactForm() {
+  const t = useTranslations("contact");
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -58,15 +60,15 @@ export default function ContactForm() {
   return (
     <div id="contact">
       <h2 className="text-3xl text-main text-center font-bold mb-6">
-        تواصل معنا
+        {t("sectionTitle")}
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 bg-white/60 border-2 border-gray-100 rounded-md px-5 py-5">
         <form onSubmit={handleSubmit} className="space-y-3">
           <Input
             name="name"
             id="name"
-            label="الاسم"
-            placeholder="الاسم"
+            label={t("name")}
+            placeholder={t("name")}
             value={formData.name}
             onChange={handleChange}
             required
@@ -75,8 +77,8 @@ export default function ContactForm() {
             name="email"
             id="email"
             type="email"
-            label="البريد الإلكتروني"
-            placeholder="البريد الإلكتروني"
+            label={t("email")}
+            placeholder={t("email")}
             value={formData.email}
             onChange={handleChange}
             required
@@ -84,8 +86,8 @@ export default function ContactForm() {
           <Input
             name="phone"
             id="phone"
-            placeholder="رقم الهاتف"
-            label="رقم الهاتف"
+            placeholder={t("phone")}
+            label={t("phone")}
             value={formData.phone}
             onChange={handleChange}
             required
@@ -93,11 +95,11 @@ export default function ContactForm() {
 
           <div>
             <label htmlFor="message" className="text-sm text-main">
-              الرسالة
+              {t("message")}
             </label>
             <textarea
               name="message"
-              placeholder="الرسالة"
+              placeholder={t("message")}
               value={formData.message}
               onChange={handleChange}
               className="p-2 border border-gray-200 text-main rounded-md focus:outline-none w-full h-28 resize-none"
@@ -109,11 +111,11 @@ export default function ContactForm() {
             disabled={isSending}
             className="bg-secondary text-white w-full rounded-md  px-4 py-2"
           >
-            {isSending ? <MiniSpinner /> : "ارسال"}
+            {isSending ? <MiniSpinner /> : t("send")}
           </button>
         </form>
         <div className="mx-auto ">
-          <p className="text-main">أو تواصل معنا عن طريق :</p>
+          <p className="text-main">{t("or")}</p>
           <div className="flex items-center gap-4 flex-wrap">
             <div className="flex mt-2">
               <a

@@ -21,10 +21,7 @@ export default async function Home() {
           <Hero />
 
           <div className="relative">
-            <Services
-              description={data.services.description}
-              services={data.services.list}
-            />
+            <Services services={data.services.list} />
             <div
               aria-hidden="true"
               className="absolute top-1/8 right-1/8 h-64 w-64 rounded-full bg-green/10 blur-3xl -z-1"

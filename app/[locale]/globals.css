@@ -40,7 +40,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-suisseIntl), var(--font-cairo), sans-serif;
-  direction: rtl;
 }
 
 .bg-waterfall {

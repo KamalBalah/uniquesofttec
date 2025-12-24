@@ -1,5 +1,7 @@
 "use client";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface IMenuItems {
   title: string;
@@ -8,11 +10,11 @@ interface IMenuItems {
 
 const menuItems: IMenuItems[] = [
   {
-    title: "الرئيسية",
+    title: "home",
     id: "#home",
   },
   {
-    title: "خدماتنا",
+    title: "services",
     id: "#services",
   },
   // {
@@ -24,7 +26,7 @@ const menuItems: IMenuItems[] = [
   //   id: "#our-projects",
   // },
   {
-    title: "تواصل معنا",
+    title: "contact",
     id: "#contact",
   },
 ];
@@ -32,9 +34,11 @@ const menuItems: IMenuItems[] = [
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+  const t = useTranslations("header");
 
   return (
-    <>
+    <div className="flex items-center justify-end gap-6 w-[80%]">
+      <LanguageSwitcher />
       <span className="md:hidden cursor-pointer" onClick={toggleMenu}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -56,18 +60,18 @@ const Menu = () => {
       <ul className="hidden md:flex justify-between w-1/2 text-lg font-semibold text-main *:cursor-pointer *:hover:text-secondary *:duration-300">
         {menuItems.map((item, index) => (
           <li key={index}>
-            <a href={item.id}>{item.title}</a>
+            <a href={item.id}>{t(item.title)}</a>
           </li>
         ))}
       </ul>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed z-2 h-[95dvh] w-[80%] top-1.5 -left-150 p-3 bg-white rounded-lg transition-all duration-300 ease-in-out
-    ${isOpen ? "-left-[2%]!" : "-left-150 pointer-events-none"}
+        className={`md:hidden fixed z-2 h-[95dvh] w-[80%] top-1.5 -end-150 p-3 bg-white rounded-lg transition-all duration-300 ease-in-out
+    ${isOpen ? "-end-[2%]!" : "-end-150 pointer-events-none"}
   `}
       >
-        <span className="absolute left-1" onClick={toggleMenu}>
+        <span className="absolute end-1" onClick={toggleMenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -86,7 +90,7 @@ const Menu = () => {
         <ul className="text-lg font-semibold text-main *:mb-2 *:mr-2 *:cursor-pointer *:hover:text-secondary *:duration-300">
           {menuItems.map((item, index) => (
             <li key={index} onClick={toggleMenu}>
-              <a href={item.id}>{item.title}</a>
+              <a href={item.id}>{t(item.title)}</a>
             </li>
           ))}
         </ul>
@@ -97,7 +101,7 @@ const Menu = () => {
         }`}
         onClick={toggleMenu}
       ></div>
-    </>
+    </div>
   );
 };
 

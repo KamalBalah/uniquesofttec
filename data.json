@@ -1,26 +1,26 @@
 {
   "services": {
-    "description": "نقدّم ما نحب أن نصنع وما نتقنه، نقدم الإبداع والجودة",
+    "description": "description",
     "list": [
       {
         "icon": "mobile.svg",
-        "title": "تطوير تطبيقات الموبايل",
-        "desc": "تصميم وتطوير تطبيقات موبايل مبتكرة تعمل على منصتي iOS وAndroid لتلبية احتياجات الأعمال الحديثة"
+        "title": "mobileApp",
+        "desc": "mobileAppDesc"
       },
       {
         "icon": "web.svg",
-        "title": "تطوير مواقع الويب",
-        "desc": "بناء مواقع ويب تفاعلية ومتجاوبة تلائم جميع الأجهزة وتوفر تجربة مستخدم سلسة وجذابة"
+        "title": "webDevelopment",
+        "desc": "webDevelopmentDesc"
       },
       {
         "icon": "uiux.svg",
-        "title": "تصميم واجهات وتجربة المستخدم",
-        "desc": "تصميم واجهات وتجربة المستخدم لضمان استخدام سلس ومريح"
+        "title": "uiux",
+        "desc": "uiuxDesc"
       },
       {
         "icon": "hosting.svg",
-        "title": "استضافة المواقع",
-        "desc": "توفير خدمات استضافة موثوقة وآمنة للمواقع مع ضمان سرعة وأداء عالي"
+        "title": "hosting",
+        "desc": "hostingDesc"
       }
     ]
   },

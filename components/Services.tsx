@@ -1,17 +1,20 @@
 import { IServicesList } from "@/interfaces";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 interface IProps {
-  description: string;
   services: IServicesList[];
 }
 
-const Services = ({ description, services }: IProps) => {
+const Services = ({ services }: IProps) => {
+  const t = useTranslations("services");
   return (
     <div id="services" className="text-main pt-10">
       <div className="h-full overflow-y-auto scrollbar-hide pb-22">
-        <h2 className="text-3xl text-green text-center font-bold">خدماتنا</h2>
-        <p className="text-base text-center my-2">{description}</p>
+        <h2 className="text-3xl text-green text-center font-bold">
+          {t("sectionTitle")}
+        </h2>
+        <p className="text-base text-center my-2">{t("description")}</p>
 
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {services.map((service, index) => (
@@ -29,9 +32,9 @@ const Services = ({ description, services }: IProps) => {
                 />
               </div>
               <h3 className="text-lg font-semibold text-main">
-                {service.title}
+                {t(service.title)}
               </h3>
-              <p className="text-sm text-gray-400 mt-2">{service.desc}</p>
+              <p className="text-sm text-gray-400 mt-2">{t(service.desc)}</p>
             </div>
           ))}
         </div>

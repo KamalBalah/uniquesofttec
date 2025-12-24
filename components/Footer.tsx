@@ -1,4 +1,5 @@
 import { IConnectsList } from "@/interfaces";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,6 +8,7 @@ interface IProps {
 }
 
 const Footer = ({ connectList }: IProps) => {
+  const t = useTranslations("footer");
   return (
     <footer
       id="connect"
@@ -22,9 +24,7 @@ const Footer = ({ connectList }: IProps) => {
               alt="Unique Soft Logo"
             />
           </Link>
-          <p className="text-white mt-5 text-center">
-            شركة تقنية متخصصة في تطوير البرمجيات وحلول الأعمال الذكية
-          </p>
+          <p className="text-white mt-5 text-center">{t("description")}</p>
         </div>
         <div className="flex gap-4 justify-center">
           {connectList.map((item, index) => (

@@ -1,16 +1,17 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const Hero = () => {
+  const t = useTranslations("hero");
   return (
     <div id="home" className="py-10">
       <div className="bg-secondary rounded-xl min-h-[400px] flex flex-col md:flex-row justify-around items-center gap-10 px-10 relative overflow-hidden">
-        <div className="flex-1 text-center md:text-right pt-6">
+        <div className="flex-1 text-center md:text-start pt-6">
           <h1 className="text-7xl font-suisseIntl font-black text-white">
-            كن فريداً
+            {t("title")}
           </h1>
           <p className="text-lg font-bold font-suisseIntl mt-3 text-main">
-            في يونيك سوفت نصنع لك شيئًا فريدًا، نولي كل تفصيلة عناية ودقة،
-            لنقدّم لك منتجًا متفردًا يبرز بين الجميع.{" "}
+            {t("description")}
           </p>
         </div>
         <div className="flex-1 z-1">
@@ -24,8 +25,8 @@ const Hero = () => {
           />
         </div>
 
-        <div className="absolute top-0 bottom-0 hidden md:block left-[8%] z-0 bg-waterfall"></div>
-        <div className="absolute top-[90%] right-0 left-0 md:hidden z-0 bg-waterfall-horz"></div>
+        <div className="absolute top-0 bottom-0 hidden md:block end-[8%] z-0 bg-waterfall"></div>
+        <div className="absolute top-[90%] start-0 end-0 md:hidden z-0 bg-waterfall-horz"></div>
       </div>
     </div>
   );

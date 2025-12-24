@@ -1,93 +1,60 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 const METADATA_BASE = new URL("https://uniquesoft.tech");
 
-export const fullMetadata: Metadata = {
-  title: "Unique Soft | يونيك سوفت",
-  description:
-    "يونيك سوفت هي شركة متخصصة في تطوير البرمجيات وتقديم حلول رقمية مبتكرة تشمل تطبيقات الموبايل، مواقع الويب، تجربة المستخدم، والاستشارات التقنية.",
-  metadataBase: METADATA_BASE,
-  alternates: {
-    canonical: "https://uniquesoft.tech/",
-    languages: {
-      ar: "https://uniquesoft.tech/",
-    },
-  },
+export async function createMetadata(locale: string): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "metadata" });
 
-  keywords: [
-    "تطوير برمجيات",
-    "شركة برمجة في اليمن",
-    "شركة برمجيات اليمن",
-    "تصميم مواقع",
-    "تطوير مواقع الويب",
-    "برمجة تطبيقات موبايل",
-    "تصميم واجهات المستخدم",
-    "تجربة المستخدم UX",
-    "تصميم UI/UX",
-    "حلول رقمية",
-    "استشارات تقنية",
-    "تطوير تطبيقات اندرويد",
-    "تطوير تطبيقات iOS",
-    "تطوير مواقع شركات",
-    "استضافة مواقع",
-    "أفضل شركة برمجة في اليمن",
-    "شركة تصميم مواقع في اليمن",
-    "تطوير تطبيقات للشركات",
-    "بناء متجر إلكتروني",
-    "شركة برمجة تطبيقات يمنية",
-    "تكلفة تصميم موقع في اليمن",
-    "شركة تطوير مواقع احترافية",
-    "تطوير مواقع متجاوبة",
-    "تصميم تطبيقات موبايل احترافية",
-    "شركات تقنية في اليمن",
-    "Software House Yemen",
-    "Web Development Yemen",
-    "Mobile App Development Yemen",
-    "UI/UX Design Yemen",
-    "Custom Software Development",
-    "Web Design Company Yemen",
-    "Unique Soft",
-    "Unique Soft Yemen",
-    "شركة يونيك سوفت",
-  ],
+  const isArabic = locale === "ar";
 
-  // Open Graph
-  openGraph: {
-    title: "Unique Soft | يونيك سوفت",
-    description:
-      "يونيك سوفت هي شركة متخصصة في تطوير البرمجيات وتقديم حلول رقمية مبتكرة تشمل تطبيقات الموبايل، مواقع الويب، تجربة المستخدم، والاستشارات التقنية.",
-    url: "https://uniquesoft.tech/",
-    siteName: "Unique Soft | يونيك سوفت",
-    type: "website",
-    images: [
-      {
-        url: "https://uniquesoft.tech/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Unique Soft | يونيك سوفت",
+  return {
+    metadataBase: METADATA_BASE,
+
+    title: t("title"),
+    description: t("description"),
+    keywords: t.raw("keywords"),
+
+    alternates: {
+      canonical: `https://uniquesoft.tech/${isArabic ? "" : "en"}`,
+      languages: {
+        ar: "https://uniquesoft.tech/",
+        en: "https://uniquesoft.tech/en",
       },
-    ],
-    locale: "ar-YE",
-  },
+    },
 
-  // Twitter card
-  twitter: {
-    card: "summary_large_image",
-    creator: "@uniquesoft_io",
-    title: "Unique Soft | يونيك سوفت",
-    description:
-      "يونيك سوفت هي شركة متخصصة في تطوير البرمجيات وتقديم حلول رقمية مبتكرة تشمل تطبيقات الموبايل، مواقع الويب، تجربة المستخدم، والاستشارات التقنية.",
-    images: ["https://uniquesoft.tech/images/og-image.png"],
-  },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `https://uniquesoft.tech/${isArabic ? "" : "en"}`,
+      siteName: t("title"),
+      type: "website",
+      locale: isArabic ? "ar_YE" : "en_US",
+      images: [
+        {
+          url: "/images/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
+    },
 
-  // Robots
-  robots: {
-    index: true,
-    follow: true,
-    // optional: fine-grained rules for Googlebot
-    googleBot: {
+    twitter: {
+      card: "summary_large_image",
+      creator: "@uniquesoft_io",
+      title: t("title"),
+      description: t("description"),
+      images: ["/images/og-image.png"],
+    },
+
+    robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
     },
-  },
-};
+  };
+}

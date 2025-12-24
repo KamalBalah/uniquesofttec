@@ -1,0 +1,49 @@
+{
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Be Unique",
+    "description": "At Unique Soft we craft something distinctive with care and precision to deliver a product that stands out."
+  },
+  "services": {
+    "sectionTitle": "Our Services",
+    "description": "We offer what we love to create and excel in, delivering creativity and quality.",
+    "mobileApp": "Mobile App Development",
+    "mobileAppDesc": "Design and build innovative mobile applications for iOS and Android to meet modern business needs.",
+    "webDevelopment": "Web Development",
+    "webDevelopmentDesc": "Build responsive, interactive websites that work on all devices and provide a seamless user experience.",
+    "uiux": "UX & UI Design",
+    "uiuxDesc": "Design smooth and comfortable user interfaces and experiences.",
+    "hosting": "Website Hosting",
+    "hostingDesc": "Provide secure and reliable website hosting with excellent performance."
+  },
+  "contact": {
+    "sectionTitle": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send",
+    "or": "Or contact us via:",
+    "whatsapp": "WhatsApp",
+    "emailAddress": "uniquesoft.io@gmail.com"
+  },
+  "footer": {
+    "description": "A technology company specializing in software development and smart business solutions."
+  },
+  "metadata": {
+    "title": "Unique Soft | Software Solutions",
+    "description": "Unique Soft is a software company specializing in web development, mobile apps, UX/UI design, and innovative digital solutions.",
+    "keywords": [
+      "Software Development",
+      "Web Development Yemen",
+      "Mobile App Development",
+      "UI UX Design",
+      "Digital Solutions",
+      "Unique Soft"
+    ]
+  }
+}

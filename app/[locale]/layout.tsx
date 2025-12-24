@@ -1,28 +1,29 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { fullMetadata } from "@/config/metadata";
+import { createMetadata } from "@/config/metadata";
 import { Analytics } from "@vercel/analytics/next";
+import { NextIntlClientProvider } from "next-intl";
 
 const suisseIntl = localFont({
   src: [
     {
-      path: "../assets//fonts/SuisseIntl/Suisse_Intl_Light.ttf",
+      path: "../../assets//fonts/SuisseIntl/Suisse_Intl_Light.ttf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../assets//fonts/SuisseIntl/SuisseIntl-Regular.ttf",
+      path: "../../assets//fonts/SuisseIntl/SuisseIntl-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../assets//fonts/SuisseIntl/Suisse_Intl_Medium.ttf",
+      path: "../../assets//fonts/SuisseIntl/Suisse_Intl_Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../assets//fonts/SuisseIntl/Suisse_Intl_Bold.ttf",
+      path: "../../assets//fonts/SuisseIntl/Suisse_Intl_Bold.ttf",
       weight: "600",
       style: "normal",
     },
@@ -34,32 +35,32 @@ const suisseIntl = localFont({
 const cairo = localFont({
   src: [
     {
-      path: "../assets/fonts/cairo/Cairo-Light.ttf",
+      path: "../../assets/fonts/cairo/Cairo-Light.ttf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../assets/fonts/cairo/Cairo-Regular.ttf",
+      path: "../../assets/fonts/cairo/Cairo-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../assets/fonts/cairo/Cairo-Medium.ttf",
+      path: "../../assets/fonts/cairo/Cairo-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../assets/fonts/cairo/Cairo-SemiBold.ttf",
+      path: "../../assets/fonts/cairo/Cairo-SemiBold.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../assets/fonts/cairo/Cairo-Bold.ttf",
+      path: "../../assets/fonts/cairo/Cairo-Bold.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../assets/fonts/cairo/Cairo-Black.ttf",
+      path: "../../assets/fonts/cairo/Cairo-Black.ttf",
       weight: "900",
       style: "normal",
     },
@@ -67,19 +68,29 @@ const cairo = localFont({
   variable: "--font-cairo",
 });
 
-export const metadata: Metadata = {
-  ...fullMetadata,
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return createMetadata(locale);
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  const direction = locale === "ar" ? "rtl" : "ltr";
+
   return (
-    <html lang="ar" dir="rtl">
+    <html lang={locale} dir={direction}>
       <body className={`${cairo.variable} ${suisseIntl.variable} antialiased`}>
-        {children}
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
         <Analytics />
         <script
           type="application/ld+json"
