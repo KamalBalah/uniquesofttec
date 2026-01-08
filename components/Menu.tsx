@@ -71,7 +71,7 @@ const Menu = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed z-2 h-[95dvh] w-[80%] top-1.5 -end-150 p-3 bg-white rounded-lg transition-all duration-300 ease-in-out
+        className={`md:hidden fixed z-2 h-[95dvh] w-[80%] top-1.5 -end-150 p-3 bg-background rounded-lg transition-all duration-300 ease-in-out
     ${isOpen ? "-end-[2%]!" : "-end-150 pointer-events-none"}
   `}
       >
@@ -100,7 +100,7 @@ const Menu = () => {
         </ul>
       </div>
       <div
-        className={`md:hidden bg-black/20 w-[120%] h-[110dvh] fixed -top-4 -left-220 ${
+        className={`md:hidden bg-main/20 w-[120%] h-[110dvh] fixed -top-4 -left-220 ${
           isOpen ? "-left-7!" : "-left-220 pointer-events-none"
         }`}
         onClick={toggleMenu}
