@@ -10,7 +10,7 @@ const Hero = () => {
           <h1 className="text-7xl font-suisseIntl font-black text-white">
             {t("title")}
           </h1>
-          <p className="text-lg font-bold font-suisseIntl mt-3 text-main">
+          <p className="text-lg font-bold font-suisseIntl mt-3 text-main light:text-background">
             {t("description")}
           </p>
         </div>

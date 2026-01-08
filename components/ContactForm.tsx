@@ -62,7 +62,7 @@ export default function ContactForm() {
       <h2 className="text-3xl text-main text-center font-bold mb-6">
         {t("sectionTitle")}
       </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 bg-white/60 border-2 border-gray-100 rounded-md px-5 py-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 bg-background/60 border-2 border-border/50 rounded-md px-5 py-5">
         <form onSubmit={handleSubmit} className="space-y-3">
           <Input
             name="name"

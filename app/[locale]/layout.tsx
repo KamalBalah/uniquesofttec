@@ -4,6 +4,7 @@ import "./globals.css";
 import { createMetadata } from "@/config/metadata";
 import { Analytics } from "@vercel/analytics/next";
 import { NextIntlClientProvider } from "next-intl";
+import { ThemeProvider } from "next-themes";
 
 const suisseIntl = localFont({
   src: [
@@ -88,9 +89,11 @@ export default async function RootLayout({
   const direction = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} dir={direction}>
+    <html lang={locale} dir={direction} suppressHydrationWarning>
       <body className={`${cairo.variable} ${suisseIntl.variable} antialiased`}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <ThemeProvider defaultTheme="light">
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </ThemeProvider>
         <Analytics />
         <script
           type="application/ld+json"

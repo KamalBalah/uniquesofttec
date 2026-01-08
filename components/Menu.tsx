@@ -2,6 +2,7 @@
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 interface IMenuItems {
   title: string;
@@ -38,7 +39,10 @@ const Menu = () => {
 
   return (
     <div className="flex items-center justify-end gap-6 w-[80%]">
-      <LanguageSwitcher />
+      <div className="flex items-center gap-2">
+        <LanguageSwitcher />
+        <ThemeSwitcher />
+      </div>
       <span className="md:hidden cursor-pointer" onClick={toggleMenu}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
